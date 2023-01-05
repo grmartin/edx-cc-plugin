@@ -89,7 +89,7 @@ def is_requirement(line):
     return line and line.strip() and not line.startswith(("-r", "#", "-e", "git+", "-c"))
 
 
-VERSION = '0.1.0' #get_version('twou_titan_plugin', '__init__.py')
+VERSION = get_version('twou_titan_plugin', '__init__.py')
 
 if sys.argv[-1] == 'tag':
     print("Tagging the version on github:")
@@ -129,7 +129,7 @@ setup(
         'Private :: Do Not Upload',
     ],
     entry_points={
-        "commerce-coordinator.djangoapp": [
+        "commerce_coordinator.apps": [
             "twou_titan_plugins = twou_titan_plugin.apps:TwouTitanPluginConfig",
         ]
     }
